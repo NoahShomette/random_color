@@ -14,12 +14,14 @@ description = "Rust crate for generating random attractive colors"
 rgb_support = ["dep:rgb"]
 palette_support = ["dep:palette"]
 ecolor_support = ["dep:ecolor"]
+wasm = ["dep:getrandom"]
 
 [dependencies]
-rand = { version = "0.9", default-features=false, features = ["small_rng", "std", "std_rng"] }
+rand = { version = "0.9", features = ["small_rng"] }
 rgb = { version = "0.8.50", optional = true }
 palette = { version = "0.7.6", optional = true }
 ecolor = { version = "0.31", optional = true }
+getrandom = { version="0.3.4", optional = true, features = ["wasm_js"] }
 
 [package.metadata.docs.rs]
 all-features = true
